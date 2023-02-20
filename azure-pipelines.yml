@@ -3,9 +3,9 @@ trigger:
 - main
 
 variables:
-  resourceGroupName: 'example'
+  resourceGroupName: 'exampleRG'
   location: 'westeurope'
-  azureSubscription: 'AzureConnection'
+  azureSubscription: 'Azure Pass - Sponsorship(48413646-b930-4a37-b2e4-80dadccb2ada)'
   resourcePrefix: 'bicep'
 
 pool:
@@ -22,7 +22,7 @@ stages:
         azureSubscription: $(azureSubscription) 
         scriptType: 'pscore'  
         scriptLocation: 'inlineScript'  
-        inlineScript: 'az bicep build --file main.bicep'  
+        inlineScript: 'az bicep build --file main.bicep' 
 
     - task: PublishBuildArtifacts@1 
       displayName: 'Publish artifact in pipeline' 

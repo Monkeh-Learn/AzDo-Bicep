@@ -24,12 +24,6 @@ stages:
         scriptLocation: 'inlineScript'  
         inlineScript: 'az bicep build --file main.bicep' 
 
-    - task: PublishBuildArtifacts@1 
-      displayName: 'Publish artifact in pipeline' 
-      inputs: 
-        PathtoPublish: '$(Build.SourcesDirectory)/main.json'  
-        ArtifactName: 'finishedTemplate'  
-        publishLocation: 'Container' 
 
 - stage: deploy
   jobs:
